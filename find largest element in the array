@@ -1,0 +1,31 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();   // number of elements
+        int[] arr = new int[N];
+
+        // array input
+        for(int i = 0; i < N; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // assume first element is largest
+        int max = arr[0];
+
+        // find largest
+        for(int i = 1; i < N; i++) {
+            if(arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        // print result
+        System.out.println(max);
+
+        sc.close();
+    }
+}
