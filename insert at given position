@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        String S = s.nextLine(); 
+        String T = s.nextLine(); 
+        int index = s.nextInt(); 
+        
+        String result = S.substring(0, index) + T + S.substring(index);
+        
+        System.out.println(result);
+    }
+}
