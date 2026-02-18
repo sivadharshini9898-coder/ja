@@ -1,0 +1,40 @@
+import java.util.*;
+
+class Student {
+    String name;
+    int marks;
+    Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    void displayGrade() {
+        String grade;
+
+        if (marks >= 90) {
+            grade = "Excellent";
+        } else if (marks >= 75) {
+            grade = "Good";
+        } else if (marks >= 50) {
+            grade = "Average";
+        } else {
+            grade = "Fail";
+        }
+
+        System.out.println("Name:" + name);
+        System.out.println("Grade:" + grade);
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String name = sc.nextLine();
+        int marks = sc.nextInt();
+
+        Student student = new Student(name, marks);
+        student.displayGrade();
+    }
+}
+
