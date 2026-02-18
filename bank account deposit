@@ -1,0 +1,35 @@
+import java.util.*;
+
+class BankAccount {
+    String accountHolder;
+    double balance;
+
+   
+    BankAccount(String accountHolder, double balance) {
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+   
+    void deposit(double amount) {
+        balance += amount;
+    }
+    void printBalance() {
+        System.out.println("Final balance:" + balance);
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String name = sc.nextLine();
+        double initialBalance = sc.nextDouble();
+        double depositAmount = sc.nextDouble();
+
+        BankAccount account = new BankAccount(name, initialBalance);
+        account.deposit(depositAmount);
+        account.printBalance();
+    }
+}
+
