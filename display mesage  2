@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+class Printer {
+    void print(String message) {
+        System.out.println(message);
+    }
+    void print(String message, int times) {
+        for (int i = 0; i < times; i++) {
+            System.out.println(message);
+        }
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Printer myPrinter = new Printer();
+        if (sc.hasNextLine()) {
+            String message = sc.nextLine();
+            if (sc.hasNextInt()) {
+                int times = sc.nextInt();
+                myPrinter.print(message, times);
+            } else {
+                myPrinter.print(message);
+            }
+        }
+        sc.close();
+    }
+}
