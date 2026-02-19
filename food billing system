@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+abstract class FoodItem {
+    abstract int getPrice(int quantity);
+}
+class Pizza extends FoodItem {
+    int getPrice(int quantity) {
+        return quantity * 200; 
+    }
+}
+class Burger extends FoodItem {
+    int getPrice(int quantity) {
+        return quantity * 100; 
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);     
+        if (sc.hasNext()) {
+            String itemName = sc.next();
+            int quantity = sc.nextInt();
+            FoodItem item = null; 
+            if (itemName.equalsIgnoreCase("Pizza")) {
+                item = new Pizza();
+            } else if (itemName.equalsIgnoreCase("Burger")) {
+                item = new Burger();
+            }
+            if (item != null) {
+                int totalAmount = item.getPrice(quantity);
+                System.out.println(totalAmount + " rupees");
+            }
+        }
+        sc.close();
+    }
+}
