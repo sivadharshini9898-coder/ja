@@ -1,0 +1,39 @@
+import java.util.*;
+interface Payment {
+    void pay(int amount);
+}
+class CreditCard implements Payment {
+    public void pay(int amount) {
+        System.out.println(amount + " is paid using CreditCard");
+    }
+}
+class UPI implements Payment {
+    public void pay(int amount) {
+        System.out.println(amount + " is paid using UPI");
+    }
+}
+class Cash implements Payment {
+    public void pay(int amount) {
+        System.out.println(amount + " is paid using Cash");
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        if (sc.hasNext()) {
+            String method = sc.next();
+            int amount = sc.nextInt();
+            Payment payment; 
+            if (method.equalsIgnoreCase("CreditCard")) {
+                payment = new CreditCard();
+            } else if (method.equalsIgnoreCase("UPI")) {
+                payment = new UPI();
+            } else {
+                payment = new Cash();
+            }
+            payment.pay(amount);
+        }
+        sc.close();
+    }
+}
