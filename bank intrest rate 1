@@ -1,0 +1,45 @@
+import java.util.*;
+class Bank {
+    String getRate() {
+        return "0%";
+    }
+}
+class SBI extends Bank {
+    @Override
+    String getRate() {
+        return "6.5%";
+    }
+}
+class HDFC extends Bank {
+    @Override
+    String getRate() {
+        return "7.0%";
+    }
+}
+class ICICI extends Bank {
+    @Override
+    String getRate() {
+        return "6.8%";
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);   
+        if (sc.hasNextLine()) {
+            String bankName = sc.nextLine().trim();          
+            Bank bank;            
+            if (bankName.equalsIgnoreCase("SBI")) {
+                bank = new SBI();
+                System.out.println(bank.getRate());
+            } else if (bankName.equalsIgnoreCase("HDFC")) {
+                bank = new HDFC();
+                System.out.println(bank.getRate());
+            } else if (bankName.equalsIgnoreCase("ICICI")) {
+                bank = new ICICI();
+                System.out.println(bank.getRate());
+            }
+        }
+        sc.close();
+    }
+}
+
